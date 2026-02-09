@@ -1,0 +1,455 @@
+// ========================================
+// BugWizard AI Landing Page JavaScript
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    initNavbar();
+    initMobileMenu();
+    initParticles();
+    init3DScene();
+    initScrollAnimations();
+    initSmoothScroll();
+});
+
+// ========================================
+// Navbar Scroll Effect
+// ========================================
+function initNavbar() {
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        // Add scrolled class when scrolling down
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        lastScroll = currentScroll;
+    });
+}
+
+// ========================================
+// Mobile Menu Toggle
+// ========================================
+function initMobileMenu() {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    }
+}
+
+// ========================================
+// Particle Animation
+// ========================================
+function initParticles() {
+    const particlesContainer = document.getElementById('particles');
+    if (!particlesContainer) return;
+
+    const particleCount = 30;
+
+    for (let i = 0; i < particleCount; i++) {
+        createParticle(particlesContainer);
+    }
+}
+
+function createParticle(container) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+
+    // Random position
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+
+    // Random size
+    const size = Math.random() * 4 + 2;
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+
+    // Random animation delay
+    particle.style.animationDelay = Math.random() * 20 + 's';
+    particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+
+    // Random opacity
+    particle.style.opacity = Math.random() * 0.5 + 0.2;
+
+    container.appendChild(particle);
+}
+
+// ========================================
+// 3D Scene with Mouse Parallax
+// ========================================
+function init3DScene() {
+    const scene = document.getElementById('scene3d');
+    if (!scene) return;
+    
+    const shapes = scene.querySelectorAll('.shape-3d');
+    let mouseX = 0;
+    let mouseY = 0;
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+    
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX - windowWidth / 2) / windowWidth;
+        mouseY = (e.clientY - windowHeight / 2) / windowHeight;
+    });
+    
+    // Update window dimensions on resize
+    window.addEventListener('resize', () => {
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+    });
+    
+    // Parallax animation loop
+    function animateParallax() {
+        shapes.forEach(shape => {
+            const speed = parseFloat(shape.dataset.speed) || 0.02;
+            const rotateX = mouseY * 30 * speed * 10;
+            const rotateY = mouseX * 30 * speed * 10;
+            const translateX = mouseX * 50 * speed * 10;
+            const translateY = mouseY * 50 * speed * 10;
+            
+            // Get current transform and add parallax
+            const currentTransform = getComputedStyle(shape).transform;
+            
+            // Apply additional parallax transform
+            shape.style.setProperty('--parallax-x', `${translateX}px`);
+            shape.style.setProperty('--parallax-y', `${translateY}px`);
+            shape.style.setProperty('--parallax-rotate-x', `${rotateX}deg`);
+            shape.style.setProperty('--parallax-rotate-y', `${rotateY}deg`);
+        });
+        
+        requestAnimationFrame(animateParallax);
+    }
+    
+    // Start parallax animation
+    animateParallax();
+    
+    // Add depth effect on scroll
+    let scrollY = 0;
+    window.addEventListener('scroll', () => {
+        scrollY = window.pageYOffset;
+        const scrollProgress = scrollY / (document.body.scrollHeight - windowHeight);
+        
+        shapes.forEach((shape, index) => {
+            const depth = (index % 3) + 1;
+            const translateZ = scrollProgress * 100 * depth;
+            const opacity = Math.max(0.3, 1 - scrollProgress * 1.5);
+            
+            shape.style.opacity = opacity;
+        });
+    });
+    
+    // Add floating animation variation
+    shapes.forEach((shape, index) => {
+        // Add slight random delay to create more organic movement
+        const delay = (index * 0.5) % 5;
+        shape.style.animationDelay = `${delay}s`;
+    });
+}
+
+// ========================================
+// Scroll Animations
+// ========================================
+function initScrollAnimations() {
+    // Add animate-on-scroll class to elements
+    const animatedElements = document.querySelectorAll(
+        '.problem-card, .step, .feature-card, .role-card, .security-card, .comparison-card'
+    );
+
+    animatedElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: unobserve after animation
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // Staggered animations for grids
+    const grids = document.querySelectorAll(
+        '.problem-grid, .features-grid, .roles-grid, .security-grid, .providers-grid'
+    );
+
+    grids.forEach(grid => {
+        const items = grid.children;
+        Array.from(items).forEach((item, index) => {
+            item.style.transitionDelay = (index * 0.1) + 's';
+        });
+    });
+}
+
+// ========================================
+// Smooth Scrolling
+// ========================================
+function initSmoothScroll() {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href === '#') return;
+
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// ========================================
+// Typing Animation (Optional)
+// ========================================
+function initTypingAnimation() {
+    const typingElements = document.querySelectorAll('[data-typing]');
+
+    typingElements.forEach(el => {
+        const text = el.getAttribute('data-typing');
+        el.textContent = '';
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 50);
+            }
+        }
+
+        // Start typing when element is in view
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                type();
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(el);
+    });
+}
+
+// ========================================
+// Counter Animation
+// ========================================
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    const suffix = element.getAttribute('data-suffix') || '';
+
+    function updateCounter() {
+        start += increment;
+        if (start < target) {
+            element.textContent = Math.floor(start) + suffix;
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target + suffix;
+        }
+    }
+
+    updateCounter();
+}
+
+// ========================================
+// Tooltip System (Optional)
+// ========================================
+function initTooltips() {
+    const tooltipElements = document.querySelectorAll('[data-tooltip]');
+
+    tooltipElements.forEach(el => {
+        const tooltipText = el.getAttribute('data-tooltip');
+
+        el.addEventListener('mouseenter', (e) => {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = tooltipText;
+            document.body.appendChild(tooltip);
+
+            const rect = el.getBoundingClientRect();
+            tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
+            tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+
+            el._tooltip = tooltip;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            if (el._tooltip) {
+                el._tooltip.remove();
+                el._tooltip = null;
+            }
+        });
+    });
+}
+
+// ========================================
+// Copy to Clipboard (Utility)
+// ========================================
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        showNotification('Copied to clipboard!', 'success');
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        showNotification('Failed to copy', 'error');
+    });
+}
+
+// ========================================
+// Notification System (Utility)
+// ========================================
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        padding: 16px 24px;
+        background: ${type === 'success' ? '#22c55e' : type === 'error' ? '#ef4444' : '#6366f1'};
+        color: white;
+        border-radius: 8px;
+        font-weight: 500;
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Add notification animations to head
+const notificationStyles = document.createElement('style');
+notificationStyles.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(notificationStyles);
+
+// ========================================
+// Performance: Debounce & Throttle
+// ========================================
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// ========================================
+// Preloader (Optional)
+// ========================================
+function hidePreloader() {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+}
+
+// Hide preloader when page is loaded
+window.addEventListener('load', hidePreloader);
+
+// ========================================
+// Analytics Event Tracking (Placeholder)
+// ========================================
+function trackEvent(category, action, label) {
+    // Implement your analytics tracking here
+    console.log(`Analytics: ${category} - ${action} - ${label}`);
+}
+
+// Track CTA clicks
+document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+    btn.addEventListener('click', () => {
+        trackEvent('CTA', 'click', btn.textContent.trim());
+    });
+});

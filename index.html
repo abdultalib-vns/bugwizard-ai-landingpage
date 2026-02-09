@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugWizard AI - AI-Driven Bug Creation & Retest Automation for Azure DevOps & JIRA</title>
+    <meta name="description" content="From raw markdown to dev-ready bugs — with one click. BugWizard AI automates bug creation, retest reporting, duplicate detection, and QA intelligence inside Azure DevOps & Atlassian JIRA.">
+    <meta name="keywords" content="BugWizard, AI, Azure DevOps, Bug Tracking, QA, Quality Assurance, Automation, Testing">
+    <meta name="author" content="BugWizard AI">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="BugWizard AI - AI-Driven Bug Creation & Retest Automation for Azure DevOps & JIRA">
+    <meta property="og:description" content="From raw markdown to dev-ready bugs — with one click. Multi-platform support for Azure DevOps & JIRA.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🧙‍♂️</span>
+                <span class="logo-text">BugWizard AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#ai-assistant">Ozzy AI</a>
+                <a href="#security">Security</a>
+                <a href="coming-soon.html">What's New</a>
+                <a href="../USER_GUIDE_MANUAL.html" class="nav-btn-secondary">User Guide</a>
+                <a href="coming-soon.html" class="nav-btn-primary">Launch App</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#ai-assistant">Ozzy AI</a>
+        <a href="#security">Security</a>
+        <a href="coming-soon.html">What's New</a>
+        <a href="../USER_GUIDE_MANUAL.html">User Guide</a>
+        <a href="coming-soon.html" class="nav-btn-primary">Launch App</a>
+    </div>
+
+    <!-- 3D Background Elements -->
+    <div class="scene-3d" id="scene3d">
+        <div class="shape-3d cube" data-speed="0.02">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+        <div class="shape-3d cube cube-2" data-speed="0.015">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+        <div class="shape-3d pyramid" data-speed="0.025">
+            <div class="face pyramid-base"></div>
+            <div class="face pyramid-front"></div>
+            <div class="face pyramid-back"></div>
+            <div class="face pyramid-left"></div>
+            <div class="face pyramid-right"></div>
+        </div>
+        <div class="shape-3d octahedron" data-speed="0.018">
+            <div class="oct-top">
+                <div class="face oct-face"></div>
+                <div class="face oct-face"></div>
+                <div class="face oct-face"></div>
+                <div class="face oct-face"></div>
+            </div>
+            <div class="oct-bottom">
+                <div class="face oct-face"></div>
+                <div class="face oct-face"></div>
+                <div class="face oct-face"></div>
+                <div class="face oct-face"></div>
+            </div>
+        </div>
+        <div class="shape-3d torus" data-speed="0.012"></div>
+        <div class="shape-3d ring ring-1" data-speed="0.008"></div>
+        <div class="shape-3d ring ring-2" data-speed="0.01"></div>
+        <div class="shape-3d ring ring-3" data-speed="0.006"></div>
+        <div class="shape-3d sphere sphere-1" data-speed="0.02"></div>
+        <div class="shape-3d sphere sphere-2" data-speed="0.015"></div>
+        <div class="shape-3d sphere sphere-3" data-speed="0.022"></div>
+        <div class="shape-3d hexagon" data-speed="0.014"></div>
+        <div class="shape-3d diamond" data-speed="0.016"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">✨</span>
+                <span>AI-Powered QA Platform</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-emoji">🧙‍♂️</span> BugWizard AI
+            </h1>
+            <p class="hero-subtitle">AI-Driven Bug Creation & Retest Automation for Azure DevOps & JIRA</p>
+            <p class="hero-description">
+                From raw markdown to dev-ready bugs in ADO or JIRA — <strong>with one click.</strong>
+            </p>
+            <p class="hero-tagline">
+                BugWizard AI is a power-user QA platform that automates bug creation, retest reporting, 
+                duplicate detection, evidence handling, and QA intelligence inside Azure DevOps & Atlassian JIRA — 
+                powered by multi-provider AI, voice-to-text input, and a deeply engineered workflow.
+            </p>
+            <p class="hero-built-by">
+                <span class="built-icon">🛠️</span> Built by an AI Driven SDET. Designed for real QA teams.
+            </p>
+            <div class="hero-cta">
+                <a href="coming-soon.html" class="btn btn-primary btn-lg">
+                    <span class="btn-icon">🪄</span>
+                    Generate Bug in ADO & JIRA
+                </a>
+                <a href="#ai-assistant" class="btn btn-secondary btn-lg">
+                    <span class="btn-icon">🤖</span>
+                    Try Ozzy AI
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">10</span>
+                    <span class="stat-label">AI Providers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">10s</span>
+                    <span class="stat-label">Retest Time</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">2</span>
+                    <span class="stat-label">Platforms</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Local Storage</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="code-title">bug-report.md</span>
+                </div>
+                <div class="code-content">
+                    <pre><code><span class="code-comment"># Bug Report</span>
+<span class="code-key">Title:</span> Login crashes on iPad
+<span class="code-key">Severity:</span> <span class="code-value">Critical</span>
+<span class="code-key">Priority:</span> <span class="code-value">P1</span>
+<span class="code-key">Device:</span> iPad Pro 12.9"
+<span class="code-key">OS:</span> iPadOS 17.2
+
+<span class="code-comment">## Repro Steps</span>
+1. Open the app
+2. Tap "Login"
+3. Enter credentials
+4. Tap "Submit"
+<span class="code-error">→ App crashes</span>
+
+<span class="code-success">✓ Parsed by BugWizard AI</span>
+<span class="code-success">✓ Ready for Azure DevOps or JIRA</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Real Problem in QA Teams</h2>
+                <p class="section-subtitle">Bug tracking isn't broken — <strong>manual execution is.</strong></p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <h3>Rejected Bugs</h3>
+                    <p>Because of unclear repro steps</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <h3>Inconsistent Formats</h3>
+                    <p>Different bug formats across testers</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <h3>Manual Retests</h3>
+                    <p>Comments written repeatedly</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <h3>Duplicate Bugs</h3>
+                    <p>Created unknowingly</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <h3>Heavy Video Files</h3>
+                    <p>Slowing down evidence sharing</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <h3>Junior Dependency</h3>
+                    <p>Testers depend on QA leads for quality</p>
+                </div>
+            </div>
+            <div class="problem-conclusion">
+                <p>Templates don't fix this. Plugins don't fix this.</p>
+                <p class="highlight">Automation with intelligence does.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The BugWizard AI Solution</h2>
+                <p class="section-subtitle">
+                    BugWizard AI is a <strong>workflow-level automation system</strong>, not just an AI writer.
+                </p>
+                <p class="section-description">
+                    It connects AI intelligence + Azure DevOps & JIRA APIs + QA-first UX to automate everything 
+                    from bug creation to retesting — without breaking existing processes.
+                </p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Paste your markdown</h3>
+                        <p>BugWizard understands structured QA markdown — not random prompts.</p>
+                    </div>
+                    <div class="step-icon">📝</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI parses & validates</h3>
+                        <p>Severity, priority, repro steps, device data, environment — extracted perfectly.</p>
+                    </div>
+                    <div class="step-icon">🤖</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Push to Azure DevOps or JIRA</h3>
+                        <p>Create bugs, submit comments, update status, attach evidence — via API.</p>
+                    </div>
+                    <div class="step-icon">🚀</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Features</h2>
+                <p class="section-subtitle">What You Actually Get</p>
+            </div>
+            <div class="features-grid">
+                <!-- Bug Creator -->
+                <div class="feature-card featured">
+                    <div class="feature-header">
+                        <span class="feature-icon">🐛</span>
+                        <div class="feature-badge">Developer's Nightmare 😨</div>
+                    </div>
+                    <h3>AI Bug Creator</h3>
+                    <ul class="feature-list">
+                        <li>Parses markdown bug reports</li>
+                        <li>Auto-fills Azure DevOps or JIRA work items</li>
+                        <li>Applies tags, severity, priority, app, market</li>
+                        <li>Supports Area Path & Iteration Path</li>
+                        <li>Duplicate detection before creation</li>
+                        <li>Opens ADO/JIRA with prefilled bug for final submit</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        Zero formatting mistakes. Zero missing fields.
+                    </div>
+                </div>
+
+                <!-- Retest Automator -->
+                <div class="feature-card featured">
+                    <div class="feature-header">
+                        <span class="feature-icon">🔄</span>
+                        <div class="feature-badge success">Developer's Chill Mode 🤩</div>
+                    </div>
+                    <h3>AI Retest Automator</h3>
+                    <ul class="feature-list">
+                        <li>Paste retest markdown</li>
+                        <li>Automatically adds formatted HTML comment</li>
+                        <li>Updates bug state: Passed → Fixed, Failed → Failed</li>
+                        <li>Appends device-specific tags</li>
+                        <li>Opens updated bug instantly</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        Retest reporting in under 10 seconds.
+                    </div>
+                </div>
+
+                <!-- Duplicate Detector -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <span class="feature-icon">🔍</span>
+                    </div>
+                    <h3>Intelligent Duplicate Detector</h3>
+                    <ul class="feature-list">
+                        <li>Keyword-based semantic search</li>
+                        <li>Uses top extracted keywords</li>
+                        <li>Searches tagged bugs only for speed</li>
+                        <li>Shows recent matches with metadata</li>
+                        <li>One-click open in Azure DevOps or JIRA</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        No more duplicate bugs polluting sprints.
+                    </div>
+                </div>
+
+                <!-- Video Compressor -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <span class="feature-icon">🎬</span>
+                    </div>
+                    <h3>Video Compressor & Uploader</h3>
+                    <ul class="feature-list">
+                        <li>Compress large videos inside the browser</li>
+                        <li>Target sizes: 10MB / 20MB / 30MB</li>
+                        <li>Quality & resolution controls</li>
+                        <li>Auto-upload to ADO/JIRA via Bug ID</li>
+                        <li>Multiple attachments supported</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        Evidence that developers actually download.
+                    </div>
+                </div>
+
+                <!-- Activity Stats -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <span class="feature-icon">📊</span>
+                    </div>
+                    <h3>Activity Stats & Dashboard</h3>
+                    <ul class="feature-list">
+                        <li>Bugs created vs retested over time</li>
+                        <li>Monthly activity summary</li>
+                        <li>Interactive charts (Chart.js)</li>
+                        <li>Persistent data across sessions</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        Measurable QA productivity.
+                    </div>
+                </div>
+
+                <!-- Power Tools -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <span class="feature-icon">🧪</span>
+                    </div>
+                    <h3>Power Tools Included</h3>
+                    <ul class="feature-list">
+                        <li>🚀 Launchpad - macOS-style app launcher</li>
+                        <li>📋 Starter Template for quick bug reports</li>
+                        <li>🎤 Voice-to-Text bug description input</li>
+                        <li>🧠 Train AI with project-specific data</li>
+                        <li>💻 Built-in terminal (25+ commands)</li>
+                        <li>📄 PDF & Excel export, History (50 reports)</li>
+                        <li>🎨 16 custom themes & PWA installable</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        A complete QA command center.
+                    </div>
+                </div>
+
+                <!-- API Flow Tester -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <span class="feature-icon">🔌</span>
+                    </div>
+                    <h3>API Flow Tester</h3>
+                    <ul class="feature-list">
+                        <li>Test REST APIs with all HTTP methods</li>
+                        <li>Custom headers & request body</li>
+                        <li>Latency testing & response analysis</li>
+                        <li>Save requests to collections</li>
+                        <li>Syntax-highlighted responses</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        Debug APIs without leaving BugWizard.
+                    </div>
+                </div>
+
+                <!-- History & Export -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <span class="feature-icon">📜</span>
+                    </div>
+                    <h3>History & Export</h3>
+                    <ul class="feature-list">
+                        <li>Save up to 50 bug reports</li>
+                        <li>One-click reload & resubmit</li>
+                        <li>Export to PDF & Excel</li>
+                        <li>Test Credit Cards reference</li>
+                        <li>Important Websites bookmarks</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        Never lose your work again.
+                    </div>
+                </div>
+
+                <!-- Launchpad -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <span class="feature-icon">🚀</span>
+                    </div>
+                    <h3>macOS-Style Launchpad</h3>
+                    <ul class="feature-list">
+                        <li>Quick access to all tools & features</li>
+                        <li>3-page app grid with smooth navigation</li>
+                        <li>Real-time search to filter apps</li>
+                        <li>Swipe or click dots to navigate</li>
+                        <li>Keyboard shortcuts supported</li>
+                    </ul>
+                    <div class="feature-result">
+                        <span class="result-icon">✓</span>
+                        Launch anything in one click.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section class="section ai-section" id="ai-assistant">
+        <div class="container">
+            <div class="ai-content">
+                <div class="ai-text">
+                    <div class="ai-badge">⭐ Star Feature</div>
+                    <h2>Ozzy AI</h2>
+                    <p class="ai-intro">
+                        This is not a chatbot.<br>
+                        <strong>This is a QA co-pilot.</strong>
+                    </p>
+                    <p class="ai-description">
+                        Ozzy AI behaves like a Senior QA + SDET mentor, 
+                        embedded directly in your workflow.
+                    </p>
+                    <div class="ai-capabilities">
+                        <h4>What It Can Do</h4>
+                        <ul>
+                            <li>Rewrite unclear bug reports</li>
+                            <li>Generate bug markdown via quick templates</li>
+                            <li>Generate retest markdown via quick templates</li>
+                            <li>Voice-to-Text bug description input</li>
+                            <li>Analyze issues & suggest edge cases</li>
+                            <li>Answer QA best-practice questions</li>
+                            <li>Train AI with project-specific data (.md/.json)</li>
+                            <li>Work with 10 AI providers seamlessly</li>
+                        </ul>
+                    </div>
+                    <a href="coming-soon.html" class="btn btn-primary">
+                        <span class="btn-icon">🤖</span>
+                        Try Ozzy AI
+                    </a>
+                </div>
+                <div class="ai-providers">
+                    <h4>10 Supported AI Providers</h4>
+                    <div class="providers-grid">
+                        <div class="provider">
+                            <span class="provider-icon">⚡</span>
+                            <span>Groq <small>(Llama 3.3 70B)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">🌐</span>
+                            <span>OpenRouter <small>(Mistral 7B)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">💎</span>
+                            <span>Gemini <small>(2.0 Flash)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">🧠</span>
+                            <span>OpenAI <small>(GPT-4o)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">🎭</span>
+                            <span>Claude <small>(3.5 Sonnet)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">🚀</span>
+                            <span>Grok <small>(Beta)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">☁️</span>
+                            <span>Azure OpenAI <small>(GPT-4o)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">🌊</span>
+                            <span>DeepSeek <small>(Chat)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">🔮</span>
+                            <span>Qwen <small>(Turbo)</small></span>
+                        </div>
+                        <div class="provider">
+                            <span class="provider-icon">✨</span>
+                            <span>GLM <small>(GLM-4)</small></span>
+                        </div>
+                    </div>
+                    <div class="providers-note">
+                        <span class="note-icon">🔒</span>
+                        All API keys stored locally. No customer data used for training.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="section comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Real Workflow Example</h2>
+            </div>
+            <div class="comparison-container">
+                <div class="comparison-card before">
+                    <div class="comparison-header">
+                        <span class="comparison-icon">❌</span>
+                        <h3>Before BugWizard AI</h3>
+                    </div>
+                    <div class="comparison-content">
+                        <div class="example-bug">
+                            <p class="bug-title">"Login crashes sometimes on iPad"</p>
+                        </div>
+                        <ul class="comparison-list">
+                            <li><span class="x-icon">✗</span> No repro steps</li>
+                            <li><span class="x-icon">✗</span> No device info</li>
+                            <li><span class="x-icon">✗</span> No environment</li>
+                            <li><span class="x-icon">✗</span> Back-and-forth comments</li>
+                            <li><span class="x-icon">✗</span> Bug rejected or delayed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="comparison-arrow">
+                    <span>→</span>
+                </div>
+                <div class="comparison-card after">
+                    <div class="comparison-header">
+                        <span class="comparison-icon">✅</span>
+                        <h3>After BugWizard AI</h3>
+                    </div>
+                    <div class="comparison-content">
+                        <ul class="comparison-list success">
+                            <li><span class="check-icon">✓</span> Structured title</li>
+                            <li><span class="check-icon">✓</span> Severity & priority classified</li>
+                            <li><span class="check-icon">✓</span> HTML repro steps</li>
+                            <li><span class="check-icon">✓</span> Device, OS, app version mapped</li>
+                            <li><span class="check-icon">✓</span> Evidence attached</li>
+                            <li><span class="check-icon">✓</span> Tags auto-applied</li>
+                            <li><span class="check-icon">✓</span> Dev-ready on first submission</li>
+                        </ul>
+                        <div class="outcome">
+                            <span class="outcome-icon">🎯</span>
+                            <strong>Outcome:</strong> Bug accepted immediately.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles Section -->
+    <section class="section roles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built for Every QA Role</h2>
+            </div>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <span class="role-icon">🧪</span>
+                    <h3>Manual Testers</h3>
+                    <ul>
+                        <li>Write bugs like a senior</li>
+                        <li>No formatting anxiety</li>
+                        <li>Faster submissions</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <span class="role-icon">🤖</span>
+                    <h3>Automation Engineers</h3>
+                    <ul>
+                        <li>Clean, consistent bug data</li>
+                        <li>Easier automation mapping</li>
+                        <li>API Flow Tester included</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <span class="role-icon">🧠</span>
+                    <h3>QA Leads</h3>
+                    <ul>
+                        <li>Standardized reporting</li>
+                        <li>Fewer reviews & rewrites</li>
+                        <li>Team-wide quality consistency</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <span class="role-icon">📦</span>
+                    <h3>Product & Engineering</h3>
+                    <ul>
+                        <li>Clear bugs in ADO or JIRA</li>
+                        <li>Faster fixes</li>
+                        <li>Less noise in your boards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section integration-section">
+        <div class="container">
+            <div class="integration-content">
+                <div class="integration-text">
+                    <h2>Deep Azure DevOps & JIRA Integration</h2>
+                    <p>BugWizard AI uses REST APIs to seamlessly connect with both platforms:</p>
+                    <ul class="integration-list">
+                        <li><span class="api-icon">📝</span> Create work items in ADO or JIRA</li>
+                        <li><span class="api-icon">💬</span> Submit discussion comments</li>
+                        <li><span class="api-icon">🔄</span> Update bug state</li>
+                        <li><span class="api-icon">📎</span> Upload attachments</li>
+                        <li><span class="api-icon">🔍</span> Fetch duplicates</li>
+                        <li><span class="api-icon">📊</span> Build QA dashboards</li>
+                    </ul>
+                    <div class="integration-badges">
+                        <span class="badge">No plugins</span>
+                        <span class="badge">No extensions</span>
+                        <span class="badge">No vendor lock-in</span>
+                        <span class="badge">Switch platforms anytime</span>
+                    </div>
+                </div>
+                <div class="integration-visual">
+                    <div class="ado-logo">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 8.877L2.247 5.91l8.405-3.416V.022l7.37 5.393L2.966 8.338v8.225L0 15.707zm24-4.45v14.651l-5.753 4.9-9.303-3.057v3.056l-5.978-7.416 15.057 1.798V5.415z"/>
+                        </svg>
+                        <span>Azure DevOps</span>
+                    </div>
+                    <div class="ado-logo" style="margin-top: 20px;">
+                        <svg viewBox="0 0 256 256" fill="currentColor" style="width: 48px; height: 48px;">
+                            <path d="M244.658 0H121.707a55.502 55.502 0 0 0 55.502 55.502h22.649V77.37c.02 30.625 24.841 55.447 55.466 55.502V10.666C255.324 4.777 250.55 0 244.658 0z" fill="#2684FF"/>
+                            <path d="M183.822 61.262H60.872c.019 30.625 24.84 55.447 55.466 55.502h22.649v21.868c.02 30.597 24.798 55.408 55.39 55.502V71.928c0-5.891-4.776-10.666-10.555-10.666z" fill="#2684FF"/>
+                            <path d="M122.951 122.489H0c0 30.653 24.85 55.502 55.502 55.502h22.72v21.868c.02 30.597 24.798 55.408 55.39 55.502V133.156c0-5.891-4.776-10.667-10.661-10.667z" fill="#2684FF"/>
+                        </svg>
+                        <span>Atlassian JIRA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="section security-section" id="security">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enterprise-Grade Security & Control</h2>
+            </div>
+            <div class="security-grid">
+                <div class="security-card">
+                    <span class="security-icon">🔐</span>
+                    <h4>SHA-256 Protected</h4>
+                    <p>Access code protection</p>
+                </div>
+                <div class="security-card">
+                    <span class="security-icon">🔐</span>
+                    <h4>Local-Only Storage</h4>
+                    <p>PAT never leaves your browser</p>
+                </div>
+                <div class="security-card">
+                    <span class="security-icon">🔐</span>
+                    <h4>Role-Based Settings</h4>
+                    <p>Developer-specific controls</p>
+                </div>
+                <div class="security-card">
+                    <span class="security-icon">🔐</span>
+                    <h4>No Cloud Storage</h4>
+                    <p>Your bugs stay with you</p>
+                </div>
+                <div class="security-card">
+                    <span class="security-icon">🔐</span>
+                    <h4>GDPR Compliant</h4>
+                    <p>Cookie consent included</p>
+                </div>
+                <div class="security-card">
+                    <span class="security-icon">🔐</span>
+                    <h4>PWA Offline Support</h4>
+                    <p>Works without internet</p>
+                </div>
+            </div>
+            <div class="security-note">
+                <span class="note-highlight">Your data never leaves your browser.</span>
+                <a href="../USER_GUIDE_MANUAL.html" class="security-link">Read the User Guide →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Stop wasting time writing bugs.</h2>
+                <p class="cta-subtitle">Start shipping better software faster.</p>
+                <a href="coming-soon.html" class="btn btn-primary btn-xl">
+                    <span class="btn-icon">🪄</span>
+                    Launch BugWizard AI
+                </a>
+                <p class="cta-tagline">
+                    Create perfect ADO/JIRA bugs. Retest in seconds. Think like a senior QA.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🧙‍♂️</span>
+                    <span class="logo-text">BugWizard AI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../USER_GUIDE_MANUAL.html">User Guide</a>
+                    <a href="#features">Features</a>
+                    <a href="#security">Security</a>
+                    <a href="coming-soon.html">What's New</a>
+                    <a href="coming-soon.html">Launch App</a>
+                </div>
+                <p class="footer-copyright">
+                    © 2026 BugWizard AI. Built with ❤️ for QA teams by <a href="https://www.linkedin.com/in/abdultalib751/" target="_blank" rel="noopener noreferrer">Abdul Talib</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
