@@ -657,6 +657,66 @@ ul {
 }
 
 /* ========================================
+   Bug Creation Section
+   ======================================== */
+.bug-creation-section {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.bug-creation-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.bug-badge {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+}
+
+.bug-features .providers-note,
+.bug-note {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: var(--danger) !important;
+}
+
+/* ========================================
+   Bug Retest Section
+   ======================================== */
+.bug-retest-section {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.bug-retest-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.retest-badge {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+}
+
+.retest-features .providers-note,
+.retest-note {
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: var(--success) !important;
+}
+
+/* ========================================
    Features Section
    ======================================== */
 .features-section {
@@ -922,6 +982,64 @@ ul {
 }
 
 /* ========================================
+   API Flow Tester Section
+   ======================================== */
+.api-tester-section {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.api-tester-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.api-badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.api-features .providers-note {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--secondary);
+}
+
+/* ========================================
+   Test Cases Optimizer Section
+   ======================================== */
+.test-optimizer-section {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.test-optimizer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.optimizer-badge {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
+.optimizer-features .providers-note {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--accent);
+}
+
+/* ========================================
    Comparison Section
    ======================================== */
 .comparison-section {
@@ -1167,6 +1285,16 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 24px;
+}
+
+.integration-ampersand {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .ado-logo {
@@ -1600,6 +1728,19 @@ ul {
     
     .security-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .integration-visual {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .integration-ampersand {
+        font-size: 2rem;
+    }
+    
+    .ado-logo {
+        padding: 32px;
     }
 }
 
