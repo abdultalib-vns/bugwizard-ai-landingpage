@@ -711,9 +711,8 @@
     </div>
 
     <script>
-        // Countdown Timer - Set to 30 days from now
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 30);
+        // Countdown Timer - Fixed launch date (March 16, 2026)
+        const launchDate = new Date('2026-03-16T00:00:00');
 
         function updateCountdown() {
             const now = new Date();
