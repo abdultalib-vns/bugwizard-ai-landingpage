@@ -229,6 +229,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
 }
 
 .nav-logo {
@@ -237,21 +238,26 @@ ul {
     gap: 10px;
     font-size: 1.25rem;
     font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .logo-icon {
     font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 20px;
 }
 
 .nav-links a {
     color: var(--text-secondary);
     font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
     transition: color var(--transition-fast);
 }
 
@@ -1040,6 +1046,73 @@ ul {
 }
 
 /* ========================================
+   Test Case Generator Section
+   ======================================== */
+.testcase-generator-section {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.testcase-generator-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.generator-badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+.generator-features .providers-note {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+/* ========================================
+   Agentify Store Section
+   ======================================== */
+.agentify-store-section {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.agentify-store-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.store-badge {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%) !important;
+}
+
+.store-features .providers-note {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+}
+
+/* Coming Soon Badge for Feature Cards */
+.feature-badge.coming-soon-badge {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+/* ========================================
    Comparison Section
    ======================================== */
 .comparison-section {
@@ -1613,7 +1686,47 @@ ul {
 /* ========================================
    Responsive Design
    ======================================== */
+@media (max-width: 1400px) {
+    .nav-links {
+        gap: 16px;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .nav-btn-secondary,
+    .nav-btn-primary {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 12px;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    
+    .nav-btn-secondary,
+    .nav-btn-primary {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
 @media (max-width: 1024px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
     .hero-visual {
         display: none;
     }
@@ -1637,14 +1750,6 @@ ul {
 @media (max-width: 768px) {
     :root {
         --section-padding: 60px;
-    }
-    
-    .nav-links {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
     }
     
     .hero {
