@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollReveal();
     initSmoothScroll();
-    initCountdown();
     initCurrencyToggle();
     initWaitlistForm();
     initTestimonialsCarousel();
@@ -95,40 +94,6 @@ function initSmoothScroll() {
             }
         });
     });
-}
-
-// ========================================
-// Countdown Timer — May 1, 2026 12:00 PM
-// ========================================
-function initCountdown() {
-    const launchDate = new Date('2026-05-01T12:00:00');
-    const daysEl = document.getElementById('lc-days');
-    const hoursEl = document.getElementById('lc-hours');
-    const minEl = document.getElementById('lc-minutes');
-    const secEl = document.getElementById('lc-seconds');
-    if (!daysEl) return;
-
-    function update() {
-        const now = new Date();
-        const diff = launchDate - now;
-        if (diff <= 0) {
-            daysEl.textContent = '00';
-            hoursEl.textContent = '00';
-            minEl.textContent = '00';
-            secEl.textContent = '00';
-            return;
-        }
-        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
-        daysEl.textContent = String(d).padStart(2, '0');
-        hoursEl.textContent = String(h).padStart(2, '0');
-        minEl.textContent = String(m).padStart(2, '0');
-        secEl.textContent = String(s).padStart(2, '0');
-    }
-    update();
-    setInterval(update, 1000);
 }
 
 // ========================================

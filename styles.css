@@ -94,6 +94,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .launch-date-text .may1{background:linear-gradient(135deg,var(--gold),var(--gold-bright),#ff9500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .launch-apology{font-size:.85rem;color:var(--red);opacity:.85;margin-top:6px}
 
+.launch-live-banner{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.22);border-radius:999px;margin-bottom:28px;box-shadow:0 0 0 1px rgba(52,211,153,.04),0 14px 36px rgba(0,0,0,.16)}
+.launch-live-dot{width:12px;height:12px;border-radius:50%;background:#34d399;box-shadow:0 0 0 8px rgba(52,211,153,.14);animation:pulse-dot 2s ease infinite}
+.launch-live-text{font-family:var(--font-display);font-size:clamp(1rem,1.8vw,1.25rem);font-weight:600;letter-spacing:-.02em;color:#7ef0c3}
+
 /* Countdown */
 .countdown{display:inline-flex;align-items:center;gap:6px;padding:14px 24px;background:rgba(245,166,35,.05);border:1px solid rgba(245,166,35,.15);border-radius:var(--radius-lg);margin-bottom:28px}
 .countdown-item{display:flex;flex-direction:column;align-items:center;min-width:50px}
