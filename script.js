@@ -350,7 +350,7 @@ function initSocialProof() {
     function showNotification() {
         const country = getRandomCountry();
         const time = timeLabels[Math.floor(Math.random() * timeLabels.length)];
-        msgEl.innerHTML = 'Someone from <strong>' + country + '</strong> just joined the waitlist';
+        msgEl.innerHTML = 'Someone from <strong>' + country + '</strong> requested for trial license';
         timeEl.textContent = time;
         notifier.classList.add('sp-show');
 
