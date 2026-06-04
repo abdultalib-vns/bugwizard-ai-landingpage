@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,16 +36,17 @@
         </a>
         <div class="nav-links">
             <a href="#features">Features</a>
-            <a href="#bento-showcase">Showcase</a>
+            <a href="#bento-showcase" class="nav-link-secondary">Showcase</a>
             <a href="#device-farm">Device Farm</a>
-            <a href="#whats-new">What's New</a>
+            <a href="#agent-builder">Agent Builder</a>
+            <a href="#whats-new" class="nav-link-secondary">What's New</a>
             <a href="#ai-assistant">Ozzy AI</a>
             <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-            <a href="about.html">About</a>
+            <a href="#faq" class="nav-link-secondary">FAQ</a>
+            <a href="about.html" class="nav-link-secondary">About</a>
         </div>
         <div class="nav-cta">
-            <a href="../Manual and Guides/USER_GUIDE_MANUAL.html" class="btn btn-ghost">User Guide</a>
+            <a href="../Manual and Guides/USER_GUIDE_MANUAL.html" class="btn btn-ghost nav-cta-guide">User Guide</a>
             <a href="../request-access.html" class="btn btn-ghost">Request Access</a>
             <a href="https://bugwizard.in/" class="btn btn-primary">Explore BugWizard AI</a>
         </div>
@@ -60,6 +61,7 @@
     <a href="#features">Features</a>
     <a href="#bento-showcase">Showcase</a>
     <a href="#device-farm">Device Farm</a>
+    <a href="#agent-builder">Agent Builder</a>
     <a href="#whats-new">What's New</a>
     <a href="#ai-assistant">Ozzy AI</a>
     <a href="#pricing">Pricing</a>
@@ -787,6 +789,20 @@
                 </ul>
                 <div class="result">✓ Extend BugWizard with powerful agents.</div>
             </div>
+            <!-- Ozzy Agent Builder -->
+            <div class="arsenal-card featured reveal">
+                <div class="arsenal-card-header"><span class="icon">🧬</span><span class="badge new">Build Your Own 🛠️</span></div>
+                <h3>Ozzy Agent Builder</h3>
+                <ul>
+                    <li>Visual drag-and-drop agent canvas</li>
+                    <li>LangGraph &amp; Google ADK node packs (200+)</li>
+                    <li>Wire prompts, tools &amp; flows — no code</li>
+                    <li>One-click publish to the Agentron Store</li>
+                    <li>Lands in "Built with Ozzy Agent Builder"</li>
+                    <li>Developer attribution on every agent</li>
+                </ul>
+                <div class="result">✓ Ship your own QA agent in minutes.</div>
+            </div>
         </div>
     </div>
 </section>
@@ -985,33 +1001,72 @@
             <div>
                 <div class="feat-badge store">🤖 Now Live</div>
                 <h2 class="feat-title">Agentron Store</h2>
-                <p class="feat-intro">Your QA agent marketplace is here. <strong>Pre-built agents. One-click power.</strong></p>
-                <p class="feat-desc">Browse, install, and configure powerful QA automation agents from the Agentron Store — community-built and AI-optimized for your workflows.</p>
+                <p class="feat-intro">Your QA agent marketplace is here. <strong>AI personas. Fuse them. Ship them.</strong></p>
+                <p class="feat-desc">Browse, install and configure powerful AI persona agents — or fuse up to 5 personas into one super-agent tuned to your exact QA workflow. Now with a dedicated "Built with Ozzy Agent Builder" category for community-published agents.</p>
                 <ul class="feat-list">
-                    <li>Pre-built automation agents for common QA tasks</li>
-                    <li>One-click installation &amp; setup</li>
-                    <li>Community-contributed agent library</li>
-                    <li>Custom workflow integrations</li>
+                    <li>Curated AI persona agents for QA &amp; SDET work</li>
+                    <li>Fuse up to 5 personas into one custom agent</li>
+                    <li>One-click install &amp; configure</li>
+                    <li>"Built with Ozzy Agent Builder" community category</li>
+                    <li>Developer attribution on every published agent</li>
                     <li>AI-powered agent recommendations</li>
-                    <li>Version control &amp; automatic updates</li>
-                    <li>Agent analytics &amp; usage insights</li>
-                    <li>Private agent publishing for teams</li>
+                    <li>Cross-tab sync — publish once, see it everywhere</li>
+                    <li>Editor's Pick spotlight for standout agents</li>
                 </ul>
                 <a href="https://bugwizard.in/" class="btn btn-primary">Explore Agentron Store on BugWizard AI</a>
             </div>
             <div class="feat-panel">
                 <h4>Store Categories</h4>
                 <div class="provider-grid">
-                    <div class="provider-item"><span>🤖</span> AI Agents</div>
+                    <div class="provider-item"><span>⭐</span> Editor's Pick</div>
+                    <div class="provider-item"><span>🧬</span> Built with Ozzy</div>
+                    <div class="provider-item"><span>🤖</span> AI Personas</div>
+                    <div class="provider-item"><span>🔀</span> Fusion Agents</div>
                     <div class="provider-item"><span>⚙️</span> Automation Tools</div>
                     <div class="provider-item"><span>🔌</span> Integrations</div>
-                    <div class="provider-item"><span>📊</span> Analytics</div>
                     <div class="provider-item"><span>🧪</span> Test Utilities</div>
-                    <div class="provider-item"><span>📝</span> Documentation</div>
                     <div class="provider-item"><span>🔐</span> Security Tools</div>
-                    <div class="provider-item"><span>🎨</span> Theme Packs</div>
                 </div>
                 <div class="feat-note">🚀 Extend BugWizard with community-powered agents.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ OZZY AGENT BUILDER ═══════════ -->
+<div class="feat-section" id="agent-builder">
+    <div class="container">
+        <div class="feat-grid reveal">
+            <div>
+                <div class="feat-badge builder">🧬 Build Your Own</div>
+                <h2 class="feat-title">Ozzy Agent Builder</h2>
+                <p class="feat-intro">No code. No limits. <strong>Design, wire and publish your own QA agent.</strong></p>
+                <p class="feat-desc">A visual agent studio built on LangGraph &amp; Google ADK. Drag nodes onto the canvas, wire prompts, tools and flows, then publish straight to the Agentron Store — where it lands in the "Built with Ozzy Agent Builder" category with your name on it.</p>
+                <ul class="feat-list">
+                    <li>Visual drag-and-drop agent canvas</li>
+                    <li>200+ LangGraph &amp; Google ADK node packs</li>
+                    <li>Wire system prompts, tools &amp; multi-step flows</li>
+                    <li>Live validation &amp; deterministic code generation</li>
+                    <li>One-click publish to the Agentron Store</li>
+                    <li>Add developer name, email &amp; website on publish</li>
+                    <li>Re-publish to update your agent in place</li>
+                    <li>Runs as a standalone, same-origin studio</li>
+                </ul>
+                <a href="https://bugwizard.in/" class="btn btn-primary">Explore Ozzy Agent Builder on BugWizard AI</a>
+            </div>
+            <div class="feat-panel">
+                <h4>Builder Toolkit</h4>
+                <div class="provider-grid">
+                    <div class="provider-item"><span>🧲</span> Drag-Drop Nodes</div>
+                    <div class="provider-item"><span>🔗</span> Flow Wiring</div>
+                    <div class="provider-item"><span>🦜</span> LangGraph</div>
+                    <div class="provider-item"><span>🔷</span> Google ADK</div>
+                    <div class="provider-item"><span>🛠️</span> Tool Nodes</div>
+                    <div class="provider-item"><span>✅</span> Live Validation</div>
+                    <div class="provider-item"><span>🚀</span> One-Click Publish</div>
+                    <div class="provider-item"><span>👤</span> Dev Attribution</div>
+                </div>
+                <div class="feat-note">🛒 Published agents appear instantly in the Agentron Store.</div>
             </div>
         </div>
     </div>
@@ -1066,6 +1121,28 @@
         </div>
         <div class="whats-new-grid">
             <div class="wn-card reveal">
+                <div class="wn-icon">🧬</div>
+                <span class="wn-tag">New</span>
+                <h3>Ozzy Agent Builder</h3>
+                <p>A no-code visual studio to design your own QA agents on LangGraph &amp; Google ADK — then publish them straight to the Agentron Store.</p>
+                <ul class="wn-list">
+                    <li>Drag-drop canvas · 200+ node packs</li>
+                    <li>One-click publish to Agentron Store</li>
+                    <li>Developer name &amp; attribution on publish</li>
+                </ul>
+            </div>
+            <div class="wn-card reveal">
+                <div class="wn-icon">🔀</div>
+                <span class="wn-tag">New</span>
+                <h3>Agentron Persona Fusion</h3>
+                <p>Fuse up to 5 AI personas into a single super-agent, and discover community creations in the new "Built with Ozzy Agent Builder" category.</p>
+                <ul class="wn-list">
+                    <li>Blend up to 5 personas into one</li>
+                    <li>"Built with Ozzy" community category</li>
+                    <li>Developer cards on every agent</li>
+                </ul>
+            </div>
+            <div class="wn-card reveal">
                 <div class="wn-icon">✨</div>
                 <span class="wn-tag">Live</span>
                 <h3>Vibe Mode</h3>
@@ -1102,11 +1179,11 @@
                 <div class="wn-icon">🚀</div>
                 <span class="wn-tag">Customizable</span>
                 <h3>Customizable Dock</h3>
-                <p>Right-click any dock icon to remove it. Right-click any Launchpad app to pin it to the dock. Build your own QA workspace.</p>
+                <p>Resize the dock (Small · Medium · Large), drag icons to reorder them, and right-click to add or remove apps. Build your own QA workspace.</p>
                 <ul class="wn-list">
-                    <li>Right-click context menus</li>
+                    <li>Dock size: Small / Medium / Large</li>
                     <li>Drag-to-reorder dock items</li>
-                    <li>Persists across sessions</li>
+                    <li>Right-click add / remove · persists</li>
                 </ul>
             </div>
             <div class="wn-card reveal">
@@ -1750,7 +1827,7 @@
                 </div>
                 <div class="footer-hq">
                     <span class="hq-pin">📍 Headquarters</span>
-                    <p>BugWizard AI, Mumbai, Maharashtra, India</p>
+                    <p>BugWizard AI, Varanasi, Uttar Pradesh, India</p>
                 </div>
             </div>
 
@@ -1766,6 +1843,7 @@
                     <li><a href="#test-optimizer">Test Cases Optimizer</a></li>
                     <li><a href="#testcase-generator">Test Case Generator</a></li>
                     <li><a href="#agentron-store">Agentron Store</a></li>
+                    <li><a href="#agent-builder">Ozzy Agent Builder</a></li>
                     <li><a href="#plugin-store">Plugin Store</a></li>
                     <li><a href="#bento-showcase">Capability Showcase</a></li>
                     <li><a href="#whats-new">What's New (v2.1)</a></li>
