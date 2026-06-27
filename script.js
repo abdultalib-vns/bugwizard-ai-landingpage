@@ -511,3 +511,174 @@ function initOfflineBanner() {
     window.addEventListener('offline', update);
     update();
 }
+
+
+// ═══════════════════════════════════════════════════════════
+// PAGE NAVIGATION SYSTEM
+// ═══════════════════════════════════════════════════════════
+
+(function initPageNavigation() {
+    const progressBar = document.getElementById('pageProgressBar');
+    const sectionNavigator = document.getElementById('sectionNavigator');
+    const sectionNavToggle = document.getElementById('sectionNavToggle');
+    const sectionNavItems = document.querySelectorAll('.section-nav-item');
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    if (!progressBar || !sectionNavigator || !backToTopBtn) return;
+
+    // Progress Bar Update
+    function updateProgressBar() {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - windowHeight;
+        const scrolled = window.scrollY;
+        const progress = (scrolled / documentHeight) * 100;
+        progressBar.style.width = progress + '%';
+    }
+
+    // Section Active State Detection
+    function updateActiveSectionNav() {
+        const sections = document.querySelectorAll('section[id], .feat-section[id]');
+        const scrollPosition = window.scrollY + 150; // Offset for navbar
+
+        let currentSection = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = section.id;
+            }
+        });
+
+        // Update active nav item
+        sectionNavItems.forEach(item => {
+            const sectionId = item.getAttribute('data-section');
+            if (sectionId === currentSection) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    // Back to Top Button Visibility
+    function updateBackToTopVisibility() {
+        if (window.scrollY > 500) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    }
+
+    // Toggle Section Navigator
+    sectionNavToggle.addEventListener('click', function() {
+        sectionNavigator.classList.toggle('collapsed');
+        
+        // Save state to localStorage
+        const isCollapsed = sectionNavigator.classList.contains('collapsed');
+        localStorage.setItem('sectionNavCollapsed', isCollapsed);
+    });
+
+    // Restore collapsed state from localStorage
+    const savedCollapsedState = localStorage.getItem('sectionNavCollapsed');
+    if (savedCollapsedState === 'true') {
+        sectionNavigator.classList.add('collapsed');
+    }
+
+    // Smooth scroll for nav items
+    sectionNavItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const navbarHeight = 80;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Back to Top Button Click
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Scroll Event Listener with Throttle
+    let ticking = false;
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                updateProgressBar();
+                updateActiveSectionNav();
+                updateBackToTopVisibility();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Initial Updates
+    updateProgressBar();
+    updateActiveSectionNav();
+    updateBackToTopVisibility();
+
+    // Auto-collapse navigator on mobile
+    function handleResponsiveNav() {
+        if (window.innerWidth <= 768) {
+            sectionNavigator.style.display = 'none';
+        } else {
+            sectionNavigator.style.display = 'block';
+        }
+    }
+
+    window.addEventListener('resize', handleResponsiveNav);
+    handleResponsiveNav();
+
+    console.log('✅ Page Navigation System initialized');
+})();
+
+// ═══════════════════════════════════════════════════════════
+// KEYBOARD SHORTCUTS FOR NAVIGATION
+// ═══════════════════════════════════════════════════════════
+
+(function initKeyboardShortcuts() {
+    document.addEventListener('keydown', function(e) {
+        // Ctrl/Cmd + Up Arrow = Back to Top
+        if ((e.ctrlKey || e.metaKey) && e.key === 'ArrowUp') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Ctrl/Cmd + Down Arrow = Scroll to Bottom
+        if ((e.ctrlKey || e.metaKey) && e.key === 'ArrowDown') {
+            e.preventDefault();
+            window.scrollTo({ 
+                top: document.documentElement.scrollHeight, 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Ctrl/Cmd + K = Toggle Section Navigator
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            const navigator = document.getElementById('sectionNavigator');
+            if (navigator) {
+                navigator.classList.toggle('collapsed');
+            }
+        }
+    });
+
+    console.log('✅ Keyboard shortcuts initialized (Ctrl+↑: Top, Ctrl+↓: Bottom, Ctrl+K: Toggle Nav)');
+})();

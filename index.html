@@ -17,14 +17,46 @@
     <meta name="description" content="The ultimate AI-powered QA OS with Vibe Mode. Bug creation, retest automation, cloud device farm, AI co-pilot (12+ providers), API testing, biometric lock, VS Code launcher, browser extension &amp; more — all inside Azure DevOps &amp; JIRA.">
     <meta name="keywords" content="BugWizard, AI, Vibe Mode, Azure DevOps, JIRA, Bug Tracking, QA, Quality Assurance, Automation, Testing, Cloud Device Farm, Simulators, Emulators, Ozzy AI, NVIDIA Nemotron, Touch ID, Face ID, VS Code, Browser Extension">
     <meta name="author" content="BugWizard AI">
+    
+    <!-- SEO and Social Tags -->
+    <link rel="canonical" href="https://bugwizard.in/" />
     <meta property="og:title" content="BugWizard AI - AI-Powered QA Operating System">
     <meta property="og:description" content="The complete QA command center. Bug automation, cloud device farm, AI assistant, API tester &amp; more for Azure DevOps &amp; JIRA.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bugwizard.in/">
+    <meta property="og:image" content="https://bugwizard.in/og-image.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BugWizard AI - AI-Powered QA OS">
+    <meta name="twitter:description" content="The ultimate AI-powered QA OS with Vibe Mode.">
+    <meta name="twitter:image" content="https://bugwizard.in/og-image.jpg">
+    
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BugWizard AI",
+      "operatingSystem": "Web, Azure DevOps, JIRA",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "description": "AI-Powered QA Operating System for Azure DevOps & JIRA.",
+      "author": {
+        "@type": "Organization",
+        "name": "BugWizard AI"
+      }
+    }
+    </script>
 </head>
 <body>
 <!-- ═══════════ NAVBAR ═══════════ -->
@@ -83,8 +115,8 @@
                 </div>
 
                 <h1 class="hero-title">
-                    <img src="Logo.png" alt="" class="logo-inline">
-                    BugWizard <span class="highlight">AI</span>
+                    <img src="Logo.png" alt="BugWizard AI logo" class="logo-inline">
+                    BugWizard <span class="highlight">AI</span><span style="position:absolute; width:1px; height:1px; overflow:hidden;">: AI-Powered QA OS for Azure DevOps & JIRA</span>
                 </h1>
 
                 <p class="hero-sub">The Complete AI-Powered QA OS for Azure DevOps &amp; JIRA</p>
@@ -1942,6 +1974,107 @@
     </div>
 </footer>
 
+<!-- ═══════════ PAGE NAVIGATION SYSTEM ═══════════ -->
+<!-- Progress Bar -->
+<div class="page-progress-bar" id="pageProgressBar"></div>
+
+<!-- Floating Section Navigator -->
+<div class="section-navigator" id="sectionNavigator">
+    <div class="section-nav-header">
+        <span class="section-nav-title">Navigate</span>
+        <button class="section-nav-toggle" id="sectionNavToggle" aria-label="Toggle navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+    </div>
+    <nav class="section-nav-list" id="sectionNavList">
+        <a href="#hero" class="section-nav-item active" data-section="hero">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Home</span>
+        </a>
+        <a href="#bento-showcase" class="section-nav-item" data-section="bento-showcase">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Capabilities</span>
+        </a>
+        <a href="#device-farm" class="section-nav-item" data-section="device-farm">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Device Farm</span>
+        </a>
+        <a href="#bug-creation" class="section-nav-item" data-section="bug-creation">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Bug Creator</span>
+        </a>
+        <a href="#bug-retest" class="section-nav-item" data-section="bug-retest">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Retest Automator</span>
+        </a>
+        <a href="#features" class="section-nav-item" data-section="features">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Full Arsenal</span>
+        </a>
+        <a href="#ai-assistant" class="section-nav-item" data-section="ai-assistant">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Ozzy AI</span>
+        </a>
+        <a href="#api-tester" class="section-nav-item" data-section="api-tester">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">API Tester</span>
+        </a>
+        <a href="#test-optimizer" class="section-nav-item" data-section="test-optimizer">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Test Optimizer</span>
+        </a>
+        <a href="#testcase-generator" class="section-nav-item" data-section="testcase-generator">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Test Generator</span>
+        </a>
+        <a href="#agentron-store" class="section-nav-item" data-section="agentron-store">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Agentron Store</span>
+        </a>
+        <a href="#agent-builder" class="section-nav-item" data-section="agent-builder">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Agent Builder</span>
+        </a>
+        <a href="#plugin-store" class="section-nav-item" data-section="plugin-store">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Plugin Store</span>
+        </a>
+        <a href="#whats-new" class="section-nav-item" data-section="whats-new">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">What's New</span>
+        </a>
+        <a href="#power-tools" class="section-nav-item" data-section="power-tools">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Power Tools</span>
+        </a>
+        <a href="#security" class="section-nav-item" data-section="security">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Security</span>
+        </a>
+        <a href="#testimonials" class="section-nav-item" data-section="testimonials">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Testimonials</span>
+        </a>
+        <a href="#faq" class="section-nav-item" data-section="faq">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">FAQ</span>
+        </a>
+        <a href="#pricing" class="section-nav-item" data-section="pricing">
+            <span class="section-nav-dot"></span>
+            <span class="section-nav-label">Pricing</span>
+        </a>
+    </nav>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</button>
+
 <!-- ═══════════ ASK AI WIDGET ═══════════ -->
 <div class="ask-ai-dock">
     <div class="ask-ai-cat" aria-hidden="true">
@@ -2150,6 +2283,6 @@
 <!-- Offline Banner -->
 <div class="offline-banner" id="offline-banner">You are currently offline. Some features may be unavailable.</div>
 
-<script src="script.js"></script>
+<script src="script.min.js"></script>
 </body>
 </html>
